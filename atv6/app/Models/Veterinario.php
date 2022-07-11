@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Veterinario extends Model
 {
-    use HasFactory;
+    //use HasFactory;
     use SoftDeletes;
 
     protected $fillable = ['crmv', 'nome', 'especialidade_id'];

@@ -9,7 +9,7 @@
     <div class="col">
 
         <!-- Utiliza o componente "datalist" criado -->
-        <x-datalistVet :title="Especialidades" :crud="especialidades" :header="['NOME', 'DESCRICAO', 'AÇÕES']" :fields="['id', 'nome', 'descricao']" :data="$dados" :hide="[true, false, true, false]" :info="['id','nome', 'descricao']" :remove="nome" />
+        <x-datalist :title="Especialidades" :crud="especialidades" :header="['NOME', 'DESCRICAO', 'AÇÕES']" :fields="['id', 'nome', 'descricao']" :data="$dados" :hide="[true, false, true, false]" :info="['id','nome', 'descricao']" :remove="nome" />
 
     </div>
 </div>

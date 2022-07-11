@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Especialidade;
 use Illuminate\Http\Request;
 
 class EspecialidadesController extends Controller
@@ -10,7 +10,7 @@ class EspecialidadesController extends Controller
     public function index()
     {
         $dados = Especialidade::all();
-        $clinica = "VetClin DWII";
+       
 
         return view('especialidades.index', compact('dados'));
     }
@@ -95,9 +95,7 @@ class EspecialidadesController extends Controller
     {
         $obj = Especialidade::find($id);
 
-        if(!isset($obj)){
-            return "<h1>ID: $id não encontrado!;"
-        }
+        if(!isset($obj)){return "<h1>ID: $id não encontrado!";}
 
         $obj->destroy($id);
 
