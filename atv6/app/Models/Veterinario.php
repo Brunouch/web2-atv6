@@ -2,17 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Veterinario extends Model
 {
-    //use HasFactory;
-    use SoftDeletes;
+    use HasFactory;
+    protected $fillable = ['nome', 'crmv','especialidade_id'];
 
-    protected $fillable = ['crmv', 'nome', 'especialidade_id'];
-
-    public function especialidade(){
-        return $this->belongsTo('App/Models/Especialidade');
+    public function especialidade() {
+        return $this->belongsTo('\App\Models\Especialidade');
     }
 }

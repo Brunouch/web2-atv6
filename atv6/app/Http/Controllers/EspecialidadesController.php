@@ -17,7 +17,7 @@ class EspecialidadesController extends Controller
 
     public function create()
     {
-        return view('especialidade.create');
+        return view('especialidades.create');
     }
 
     
@@ -87,7 +87,7 @@ class EspecialidadesController extends Controller
 
         $obj->save();
 
-        return redirect()->route('especialidade.index'); 
+        return redirect()->route('especialidades.index'); 
     }
 
     
@@ -99,7 +99,7 @@ class EspecialidadesController extends Controller
 
         $obj->destroy($id);
 
-        return redirect()->route('especialidade.index');
+        return redirect()->route('especialidades.index');
         
     }
 }

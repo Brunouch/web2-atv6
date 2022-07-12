@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Especialidade extends Model
-{
+class Especialidade extends Model {
+
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = ['nome', 'descricao'];
 
-    public function veterinario(){
-        return $this->hasMany('App/Models/Veterinario');
+    public function veterinario() {
+        return $this->hasMany('\App\Models\Veterinario');
     }
 }

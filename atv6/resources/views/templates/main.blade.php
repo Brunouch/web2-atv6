@@ -132,14 +132,18 @@
     <!-- JQuery / JS -->
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
 
+
     <script type="text/javascript">
+
         function showInfoModal(data, fields) {
-            data = JSON.parse(data)
-            fields = JSON.parse(fields)
-            
+
+
             $('#infoModal').modal().find('.modal-body').html(""); 
+            $('#infoModal').modal().find('.modal-body').append("<b>" + data + "</b><br>");
+
             for(let a=0; a<fields.length; a++) {
-                $('#infoModal').modal().find('.modal-body').append("<b>" + data[fields[a]] + "</b><br>");
+                $('#infoModal').modal().find('.modal-body').append("<b>" + fields[a] + "</b>");
+                
             }
             $("#infoModal").modal('show');
         }

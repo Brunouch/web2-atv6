@@ -9,8 +9,10 @@
     <div class="col">
 
         <!-- Utiliza o componente "datalist" criado -->
-        <x-datalist :title="Especialidades" :crud="especialidades" :header="['NOME', 'DESCRICAO', 'AÇÕES']" :fields="['id', 'nome', 'descricao']" :data="$dados" :hide="[true, false, true, false]" :info="['id','nome', 'descricao']" :remove="nome" />
-
+        <x-datalistEspecialidades 
+        :header="['NOME', 'DESCRICÃO', 'AÇÕES']" 
+        :data="$dados" 
+        :hide="[ false, true, false]" />
     </div>
 </div>
 @endsection

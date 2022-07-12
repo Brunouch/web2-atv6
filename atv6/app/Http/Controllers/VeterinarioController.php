@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Veterinario;
+use App\Models\Especialidade;
+
 use Illuminate\Http\Request;
 
 class VeterinarioController extends Controller
@@ -12,6 +14,7 @@ class VeterinarioController extends Controller
     public function index()
     {
         $dados = Veterinario::all();
+
         return view('veterinarios.index', compact('dados'));
     }
 
@@ -20,13 +23,15 @@ class VeterinarioController extends Controller
 
     {
         $esp = Especialidade::all();
-        return view('veterinarios.create', compact('esp'));
+
+        return view('veterinarios.create', compact(['esp']));
     }
 
 
     public function store(Request $request)
     {   
 
+        
         $regras = [
             'crmv' => 'required|max:10|min:5|unique:veterinarios',
             'nome' => 'required|max:100|min:10',
@@ -40,9 +45,9 @@ class VeterinarioController extends Controller
             "unique" => "Já existe um Veterinário cadastrado com esse [:attribute]!"
         ];
 
-        echo $request->especialidade_id;
 
         $request->validate($regras, $msgs);
+
 
         Veterinario::create([
             'crmv' => $request->crmv,
@@ -62,12 +67,11 @@ class VeterinarioController extends Controller
     {
 
         $dados = Veterinario::find($id);
-        $esp = Especialidade::all();
+        $esp = Veterinario::all();
 
         if (!isset($dados)) {
             return "<h1>ID: $id não encontrado!</h1>";
         }
-        echo($dados->$id);
 
         return view('veterinarios.edit', compact(['dados', 'esp']));
     }
