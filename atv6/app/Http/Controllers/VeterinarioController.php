@@ -67,7 +67,7 @@ class VeterinarioController extends Controller
     {
 
         $dados = Veterinario::find($id);
-        $esp = Veterinario::all();
+        $esp = Especialidade::all();
 
         if (!isset($dados)) {
             return "<h1>ID: $id não encontrado!</h1>";

@@ -13,7 +13,7 @@
 
     </head>
     <body>
-        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-secondary">
+        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-success">
             <div class="container-fluid">
                 <a href="{{route('index')}}" class="navbar-brand ms-sm-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-clipboard2-pulse-fill" viewBox="0 0 16 16">
@@ -74,7 +74,7 @@
             <hr>
             @yield('conteudo')
         </div>
-        <nav class="navbar fixed-bottom navbar-dark bg-secondary">
+        <nav class="navbar fixed-bottom navbar-dark bg-success">
             <div class="container-fluid">
                 <span class="text-white fw-light">&copy; Gil Eduardo de Andrade</span>
             </div>
