@@ -109,7 +109,7 @@ class VeterinarioController extends Controller
         $request->validate($regras, $msgs);
 
         $obj->fill([
-            'crmv' => $request->nome,
+            'crmv' => $request->crmv,
             'nome' => mb_strtoupper($request->nome, 'UTF8'),
             'especialidade' => $request->especialidade,
         ]);
